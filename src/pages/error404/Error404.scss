@@ -1,0 +1,59 @@
+@import '../../styles/variables.scss';
+
+.error-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-grow: 1;
+
+    @media screen and (min-width: $sm) {
+        gap: 50px;
+    }
+
+    .error-code {
+        font-weight: 700;
+        font-size: 9.6rem;
+        color: $kasa-red;
+
+        @media screen and (min-width: $sm) {
+            font-size: 18rem;
+        }
+    }
+
+    .error-message {
+        width: 260px;
+        height: 52px;
+        font-weight: 500;
+        font-size: 1.8rem;
+        color: $kasa-red;
+        text-align: center;
+
+        @media screen and (min-width: $sm) {
+            font-size: 2.25rem;
+            width: 100%;
+
+            br {
+                display: none;
+            }
+        }
+    }
+
+    .link-home {
+        width: 221px;
+        height: 20px;
+        font-weight: 500;
+        font-size: 1.4rem;
+        color: #000;
+        text-decoration: underline;
+        text-align: center;
+
+        @media screen and (min-width: $sm) {
+            width: 100%;
+            font-size: 1.12rem;
+            padding-block: 100px;
+        }
+    }
+}

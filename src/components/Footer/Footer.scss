@@ -1,0 +1,17 @@
+@import '../../styles/variables.scss';
+
+.footer {
+    @include flex-center;
+    flex-flow: column;
+    background-color: $main-bg-color;
+    color: #fff;
+    gap: 2em;
+    padding: 2em;
+    font-size: 1.5rem;
+    &.footer>img {
+        height: 40px;
+        width: 122px;
+    } 
+    
+           
+}

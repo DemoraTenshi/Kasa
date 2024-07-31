@@ -1,0 +1,54 @@
+///colors////
+$kasa-red: #ff6060;
+$main-bg-color: #000;
+$content-bg-color: #f6f6f6;
+$home-banner-opacity: 0.6;
+$home-banner-txt-color: #fff;
+$about-banner-opacity: 0.3;
+$collapsible-text-color: #fff;
+$card-overlay-gradient: linear-gradient(180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(10, 10, 10, 0) 42%,
+    rgba(4, 4, 4, 0.205) 99.99%,
+    rgba(0, 0, 0, 0.5) 100%);
+
+///mixin///    
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin banner-dimensions {
+  width: auto;
+  height: 111px;
+  border-radius: 10px;
+
+  @media screen and (min-width: $sm) {
+    height: 223px;
+    border-radius: 25px;
+  }
+}
+
+@mixin banner-template($imgUrl,
+  $height: 223px,
+  $width: 100%,
+  $border-radius: 25px,
+  $mobile-height: 111px,
+  $mobile-border-radius: 10px) {
+  background-image: url($imgUrl);
+  background-size: cover;
+  @include banner-dimensions;
+}
+
+@mixin banner-opacity($opacity) {
+  background: rgba(0, 0, 0, $opacity);
+}
+
+////breakpoints/////
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+
+$max-content-width: 1240px;

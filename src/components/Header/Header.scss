@@ -1,0 +1,26 @@
+@import '../../styles/variables.scss';
+
+.header {
+    padding: 2em 7em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__nav {
+        display: flex;
+        gap: 6em;
+        align-items: center;
+
+        .nav__link-home,
+        .nav__link-about {
+            font-size: 1.5rem;
+            font-weight: 500;
+            text-decoration: none;
+            color: #000;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

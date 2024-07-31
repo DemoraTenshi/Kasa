@@ -1,0 +1,90 @@
+@import '../../styles/variables.scss';
+
+.collapse {
+    width: 100%;
+
+    .collapse__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: $kasa-red;
+        border-radius: 5px;
+        height: 30px;
+        padding: 0 10px;
+        flex-grow: 1;
+        cursor: pointer;
+
+        @media screen and (min-width: $sm) {
+            height: 35px;
+            font-size: 1.5rem;
+        }
+
+        @media screen and (min-width: $md) {
+            height: 45px;
+           
+        }
+
+        @media screen and (min-width: $lg) {
+            height: 52px;
+        }
+
+        .collapse__heading {
+            font-size: 1.3rem;
+            color: $collapsible-text-color; // Couleur du titre
+
+            @media screen and (min-width: $sm) {
+                font-size: 1.8rem;
+            }
+        }
+
+        .arrow {
+            width: 16px;
+            height: 9px;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            @media screen and (min-width: $sm) {
+                width: 24px;
+                height: 13px;
+            }
+        }
+    }
+
+    .collapse__content {
+        max-height: 0;
+        overflow: hidden;
+       
+    }
+
+    .arrow-up {
+        transform: rotate(0);
+        transition: transform 600ms;
+    }
+
+    .arrow-down {
+        transform: rotate(-180deg);
+        transition: transform 600ms;
+    }
+
+    &.active {
+        
+        .collapse__content {
+            max-height: 500px; // Ajuste cette valeur selon tes besoins
+            background: $content-bg-color;
+            font-size: 1.2rem;
+            padding: 1em;
+            border-radius: 5px;
+           
+            
+            ul {
+                list-style-type: none;
+            }
+            
+            @media screen and (min-width: $sm) {
+               
+            }
+        }
+    }
+}
