@@ -3,17 +3,38 @@ import PropTypes from "prop-types";
 import Arrow from "../../assets/arrow-up.png";
 import './Collapse.scss';
 
-function Collapse({ title, content }) {
+function Collapse({ data }) {
     const [active, setActive] = useState(false);
 
     const handleToggle = () => {
         setActive(!active);
     };
 
+    const renderContent = () => {
+        const { title, id, ...rest } = data; // Exclure l'ID
+        return (
+            <div>
+                {Object.keys(rest).map(key => {
+                    if (Array.isArray(rest[key])) {
+                        return (
+                            <ul key={key}>
+                                {rest[key].map(item => (
+                                    <li key={item}>{item}</li>
+                                ))}
+                            </ul>
+                        );
+                    } else {
+                        return <p key={key}>{rest[key]}</p>;
+                    }
+                })}
+            </div>
+        );
+    };
+
     return (
         <div className={`collapse ${active ? 'active' : ''}`}>
             <div className="collapse__header" onClick={handleToggle}>
-                <h2 className="collapse__heading">{title}</h2>
+                <h2 className="collapse__heading">{data.title}</h2>
                 <img
                     src={Arrow}
                     alt="Toggle arrow"
@@ -22,7 +43,7 @@ function Collapse({ title, content }) {
             </div>
             {active && (
                 <div className="collapse__content">
-                    {content}
+                    {renderContent()}
                 </div>
             )}
         </div>
@@ -30,8 +51,14 @@ function Collapse({ title, content }) {
 }
 
 Collapse.propTypes = {
-    title: PropTypes.string.isRequired,
-    content: PropTypes.node.isRequired,
+    data: PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        description: PropTypes.string,
+        equipments: PropTypes.arrayOf(PropTypes.string),
+        tags: PropTypes.arrayOf(PropTypes.string),
+        // Ajoutez d'autres propriétés ici si nécessaire
+    }).isRequired,
 };
 
 export default Collapse;

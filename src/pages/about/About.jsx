@@ -10,7 +10,7 @@ function About() {
       <Banner page='about' />
       <section className='collapse'>
         {about.map((item) => (
-          <Collapse key={item.id} title={item.title} content={item.content} />
+          <Collapse key={item.id} data={item} />
         ))}
       </section>
     </main>
