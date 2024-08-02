@@ -1,6 +1,8 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Navigate } from 'react-router-dom'
 import Slideshow from '../../components/Slideshow/Slideshow'
+import Tags from '../../components/Tags/Tags'
+import Collapse from '../../components/Collapse/Collapse'
 import housingData from '../../data/housing.json'
 import './Housing.scss'
 
@@ -9,30 +11,40 @@ function Housing() {
     const housing = housingData.find(h => h.id === id);
 
     if (!housing) {
-        return <div>Appartement non trouvé</div>;
+       return <Navigate to="/Error404"/>
+    }
+        const renderStars = (rating) => {
+        const stars = [];
+        for (let i = 0; i < 5; i++) {
+            stars.push(
+                <span key={i} className={`star ${i < rating ? 'filled' : ''}`}>
+                    ★
+                </span>
+            );
+        }
+        return stars;
     }
 
     return (
         <main className='housing'>
             <Slideshow slides={housing.pictures} />
-            <section className='housing__details'>
-                <h1>{housing.title}</h1>
-                <p>{housing.location}</p>
-                <ul>
-                    {housing.tags.map((tag, index) => (
-                        <li key={index}>{tag}</li>
-                    ))}
-                </ul>
-                <div className='housing__host'>
+            <section className='housing__info'>
+                <div className='housing__summary'>
+                <h1 className='housing__tile'>{housing.title}</h1>
+                <p className='housing__location'>{housing.location}</p>
+                <div className='housing__tags'>
+                    <Tags tags={housing.tags}/>
+                </div>
+                <div className='housing__host-rating'>
+                    <div className='housing__rating'>
+                    {renderStars(parseInt(housing.rating))}
+                    </div>
                     <p>{housing.host.name}</p>
                     <img src={housing.host.picture} alt={housing.host.name} />
                 </div>
-                <p>{housing.description}</p>
-                <ul>
-                    {housing.equipments.map((equipment, index) => (
-                        <li key={index}>{equipment}</li>
-                    ))}
-                </ul>
+                <Collapse data={{title:"Description", description:housing.description}}/>
+                <Collapse data={{title:"Équipements", description:housing.equipments}}/>
+                </div>
             </section>
         </main>
     );

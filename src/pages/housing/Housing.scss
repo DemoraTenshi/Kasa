@@ -1,0 +1,17 @@
+.housing {
+    // Vos styles existants
+
+    &__rating {
+        display: flex;
+        margin-top: 10px;
+    }
+
+    .star {
+        font-size: 24px;
+        color: #ccc;
+
+        &.filled {
+            color: #ffd700; // Couleur des étoiles remplies
+        }
+    }
+}

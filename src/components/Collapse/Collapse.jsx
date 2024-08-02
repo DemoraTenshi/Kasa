@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
-import Arrow from "../../assets/arrow-up.png";
-import './Collapse.scss';
+import React, { useState } from "react"
+import PropTypes from "prop-types"
+import Arrow from "../../assets/arrow-up.png"
+import './Collapse.scss'
 
 function Collapse({ data }) {
     const [active, setActive] = useState(false);
@@ -11,7 +11,7 @@ function Collapse({ data }) {
     };
 
     const renderContent = () => {
-        const { title, id, ...rest } = data; // Exclure l'ID
+        const { title, id, ...rest } = data
         return (
             <div>
                 {Object.keys(rest).map(key => {
@@ -61,4 +61,4 @@ Collapse.propTypes = {
     }).isRequired,
 };
 
-export default Collapse;
+export default Collapse
