@@ -1,4 +1,4 @@
-![Kasa Logo](./src/assets/logo.svg)
+![Kasa Logo](./src/assets/logo.png)
 
 # Kasa - Application de Location d'Appartements
 
