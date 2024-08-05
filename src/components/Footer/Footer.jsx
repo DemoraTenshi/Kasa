@@ -9,7 +9,7 @@ function Footer() {
 
         <footer className='footer'>
             <img className='footer__logo' src={LogoFooter} alt='Logo Kasa '/>
-            <p className='footer__p'>© 2020 Kasa. All rights reserved</p>
+            <p className='footer__p'>© 2020 Kasa. All{'\n'} rights reserved</p>
         </footer>
     )
 }

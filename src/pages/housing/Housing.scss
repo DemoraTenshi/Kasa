@@ -1,17 +1,111 @@
+@import '../../styles/variables.scss';
+
 .housing {
-    // Vos styles existants
+    padding: 2em 7em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-    &__rating {
-        display: flex;
-        margin-top: 10px;
-    }
+.housing__info {
+    width: 100%;
+    padding-top: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
 
-    .star {
-        font-size: 24px;
-        color: #ccc;
+.housing__summary {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
 
-        &.filled {
-            color: #ffd700; // Couleur des étoiles remplies
+.housing__header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 1em;
+}
+
+.housing__header-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.housing__tile {
+    font-size: 2.25em;
+    font-weight: 500;
+    color: $kasa-red;
+    padding-bottom: 0.3em;
+}
+
+.housing__location {
+    font-size: 1.12em;
+    font-weight: 500;
+}
+
+.housing__host {
+    display: flex;
+    align-items: center;
+
+    .housing__host-name {
+        margin: 0;
+        font-size: 1.12em;
+        color: $kasa-red;
+        margin-right: 1em;
+        display: inline-block;
+        width: 100px;
+        text-align: right;
+
+        .housing__host-firstname,
+        .housing__host-lastname {
+            margin: 0;
+            white-space: nowrap;
         }
     }
+
+    img {
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+    }
+}
+
+.housing__tags-rating {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+.housing__tags {
+    display: flex;
+    align-items: center;
+}
+
+.housing__rating {
+    display: flex;
+    align-items: center;
+}
+
+.star {
+    margin-right: 5px;
+}
+
+.star img {
+    width: 20px;
+    height: 20px;
+}
+
+.housing__collapse {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.housing__collapse>div {
+    width: 48%;
 }

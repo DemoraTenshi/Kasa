@@ -1,25 +1,54 @@
 @import '../../styles/variables.scss';
 
 .header {
-    padding: 2em 7em;
+    padding: 1em; // Padding par défaut pour les petits écrans
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+    width: 100%;
+
+    &__logo {
+        width: 145px; // Taille par défaut du logo pour les petits écrans
+        height: auto;
+    }
 
     &__nav {
         display: flex;
-        gap: 6em;
+        gap: 2em; // Gap par défaut pour les petits écrans
         align-items: center;
 
         .nav__link-home,
         .nav__link-about {
-            font-size: 1.5rem;
+            font-size: 1rem; // Taille de police par défaut pour les petits écrans
             font-weight: 500;
             text-decoration: none;
             color: #000;
 
             &:hover {
                 text-decoration: underline;
+            }
+        }
+    }
+
+    // Media query pour les écrans plus larges
+
+
+    
+    @media (min-width: $lg) {
+        padding: 2em 7em;
+        justify-content: space-between;
+        width: auto;
+
+        &__logo {
+            width: 210; // Taille du logo pour les écrans plus larges
+        }
+
+        &__nav {
+            gap: 6em; // Gap pour les écrans plus larges
+
+            .nav__link-home,
+            .nav__link-about {
+                font-size: 1.5rem; // Taille de police pour les écrans plus larges
             }
         }
     }

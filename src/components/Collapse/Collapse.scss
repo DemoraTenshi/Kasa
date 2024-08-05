@@ -21,7 +21,6 @@
 
         @media screen and (min-width: $md) {
             height: 45px;
-           
         }
 
         @media screen and (min-width: $lg) {
@@ -30,10 +29,10 @@
 
         .collapse__heading {
             font-size: 1.3rem;
-            color: $collapsible-text-color; // Couleur du titre
+            color: $collapsible-text-color;
 
             @media screen and (min-width: $sm) {
-                font-size: 1.8rem;
+                font-size: 1.5rem;
             }
         }
 
@@ -53,9 +52,10 @@
     }
 
     .collapse__content {
-        max-height: 0;
+        height: 0;
         overflow: hidden;
-       
+        transition: height 0.6s ease-in-out, opacity 0.6s ease-in-out;
+        opacity: 0;
     }
 
     .arrow-up {
@@ -69,22 +69,19 @@
     }
 
     &.active {
-        
         .collapse__content {
-            max-height: 500px; // Ajuste cette valeur selon tes besoins
+            height: auto;
+            opacity: 1;
             background: $content-bg-color;
-            font-size: 1.2rem;
+            font-size: 1.12rem;
             padding: 1em;
             border-radius: 5px;
-           
-            
+
             ul {
-                list-style-type: none;
-            }
-            
-            @media screen and (min-width: $sm) {
-               
-            }
+                    list-style-type: none;
+                }
+
+            @media screen and (min-width: $sm) {}
         }
     }
 }

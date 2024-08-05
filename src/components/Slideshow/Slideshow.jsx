@@ -19,9 +19,6 @@ function Slideshow({ slides }) {
         setCurrentIndex(newIndex);
     };
 
-    const goToSlide = (index) => {
-        setCurrentIndex(index);
-    };
 
     const showNavigation = slides.length > 1;
 
@@ -50,15 +47,6 @@ function Slideshow({ slides }) {
                     <button className="slideshow__button next" onClick={goToNext}>
                         <img src={rightArrow} alt="Next" />
                     </button>
-                    <div className="slideshow__indicators">
-                        {slides.map((_, index) => (
-                            <button
-                                key={index}
-                                className={`slideshow__indicator ${index === currentIndex ? 'active' : ''}`}
-                                onClick={() => goToSlide(index)}
-                            ></button>
-                        ))}
-                    </div>
                 </>
             )}
         </div>

@@ -1,57 +1,60 @@
 @import '../../styles/variables.scss';
 
-.gallery__card {
-    position: relative;
-    width: calc(100vw - 40px);
-    min-width: 315px;
-    border-radius: 10px;
+.card__link-housing {
+    width: 100%; 
+    min-width: 335px;
+    max-width: 100%; 
+    height: 255px; 
+    display: flex;
+    flex: 1 1 auto;
     flex-wrap: wrap;
-    justify-content: space-evenly;
 
-    &:hover {
-        transform: scale(1.02);
-        transition: transform 300ms ease;
-        box-shadow: 2px 5px 10px 3px rgba(0, 0, 0, .2);
-    }
-
-    @media screen and (min-width: $sm) {
-        min-width: unset;
-        width: 40vw;
-        height: 250px;
-        animation: fade-in 300ms ease-in;
-    }
-
-    @media screen and (min-width: $lg) {
-        width: 28vw;
-        height: 300px;
-    }
-
-    @media screen and (min-width: $xl) {
-        width: 340px;
-        height: 340px;
-    }
-
-    .card__img-preview {
-        width: 100%;
-        height: 100%;
+    .gallery__card {
+        position: relative;
         border-radius: 10px;
-        object-fit: cover;
+        overflow: hidden;
+        flex: 1 1 auto;
+
+        &:hover {
+            transform: scale(1.02);
+            transition: transform 300ms ease;
+            box-shadow: 2px 5px 10px 3px rgba(0, 0, 0, .2);
+        }
+
+        .card__img-preview {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .card__caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            color: #fff;
+            font-size: 1.13rem;
+            font-weight: 700;
+            background: $card-overlay-gradient;
+            border-radius: 0 0 10px 10px;
+            padding: 10px;
+            height: auto;
+        }
     }
 
-    .card__caption {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: flex-end;
-        justify-content: flex-start;
-        color: #fff;
-        font-size: 1.3rem;
-        font-weight: 700;
-        background: $card-overlay-gradient;
-        border-radius: 10px;
-        padding: 10px;
+    // Media query pour les écrans plus larges
+    @media (min-width: $sm) {
+        width: 100%; 
+        height: 255px; 
+    }
+
+    @media (min-width: $md) {
+        width: 30%; 
+        height: 340px; 
+        max-width: 340px; 
     }
 }

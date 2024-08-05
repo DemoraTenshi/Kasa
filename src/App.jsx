@@ -11,6 +11,7 @@ function App ()
 {
     return (
         <Router>
+            <div className='main__container'>
             <Header/>
             <Routes>
                 <Route path='/' element={<Home/>}></Route>
@@ -19,6 +20,7 @@ function App ()
                 <Route path='*' element={<Error404/>}></Route>
             </Routes>
             <Footer/>
+            </div>
         </Router>
     )
 }

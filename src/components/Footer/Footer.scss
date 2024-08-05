@@ -5,13 +5,27 @@
     flex-flow: column;
     background-color: $main-bg-color;
     color: #fff;
-    gap: 2em;
-    padding: 2em;
-    font-size: 1.5rem;
-    &.footer>img {
-        height: 40px;
-        width: 122px;
-    } 
-    
-           
+    gap: 1em;
+    padding: 1em; 
+    font-size: 1rem; 
+    width: 100%;
+    height: 209px;
+
+    &__p {
+            font-size: 0.8rem; 
+            white-space: pre-line;  
+            word-wrap: break-word; // Permet de casser les mots si nécessaire
+            text-align: center;
+        }
+
+    // Media query pour les écrans plus larges
+    @media (min-width: $lg) {
+        gap: 2em; 
+
+
+        &__p {
+                font-size: 1.5rem;
+                white-space: normal; // Réinitialise le comportement du texte pour les écrans plus larges
+            }
+    }
 }

@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+![Kasa Logo](./src/assets/logo.svg)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Kasa - Application de Location d'Appartements
 
-## Available Scripts
+Bienvenue dans le dépôt GitHub du projet Openclasstooms 5 Kasa. Le site Kasa est une plateforme de location d'appartements entre particuliers. Il a été codé il y a 10 ans en ASP.net et le but de ce projet est la refonte complète du site pour le moderniser.
 
-In the project directory, you can run:
+## Table des Matières
 
-### `yarn start`
+- [Description](#-Description)
+- [Outils](#-Outils)
+- [Installation](#-Installation)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 📄 Description
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Avec plus de 500 annonces postées chaque jour, Kasa fait partie des leaders de la location d’appartements entre particuliers en France. Ce projet vise à moderniser l'interface utilisateur en utilisant une stack JavaScript complète : Node.js pour le back-end et React pour le front-end. La refonte inclut également la mise en place d'une nouvelle maquette disponible sur Figma (https://www.figma.com/design/2BZEoBhyxt5IwZgRn0wGsL/Kasa_FR?node-id=3-0).
 
-### `yarn test`
+## 🛠 Outils
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **yarn** : Gestionnaire de packages pour installer les dépendances JavaScript.
+- **Node.js (v20.15.0)** : Environnement d'exécution JavaScript.
+- **React (18.3.1)** : Bibliothèque pour le front-end.
+- **Create-React-App (5.0.1)** : Utilisé pour initialiser et configurer l'application React. <br>
+  https://create-react-app.dev/ <br>
+  https://github.com/facebook/create-react-app <br>
+- **React Router (6.24.0)** : Utilisé pour gérer le routage de l'application. <br>
+  https://reactrouter.com/en/main <br>
+  https://github.com/remix-run/react-router <br>
+- **Sass (1.77.6)** : Pour structurer le CSS.
+- **ESLint (8.57.0)** et **Prettier (9.7.0)** : Pour des conventions de codage cohérentes.
 
-### `yarn build`
+## ⚙️ Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clonez le dépôt :
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   ```bash
+   git clone https://github.com/DemoraTenshi/P5-Kasa.git
+   cd p5-kasa
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Installez les dépendances :
 
-### `yarn eject`
+   ```bash
+   yarn install
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Lancez l'application :
+   ```bash
+   yarn start
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+L'application sera accessible à l'adresse `http://localhost:3000`.

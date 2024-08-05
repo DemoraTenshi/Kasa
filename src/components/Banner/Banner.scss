@@ -3,28 +3,35 @@
 .home__banner {
     @include banner-template("../../assets/home-banner-mobile.png");
 
-    @media (min-width: $sm) {
-        background-image: url("../../assets/home-banner.png");
-    }
-
     &--overlay {
         @include banner-opacity($home-banner-opacity);
         display: flex;
-        align-items: center;
+        align-items: flex-start; 
         padding: 0 1em;
         @include banner-dimensions;
-        
 
         .home__banner-txt {
-            width: 230px;
             color: $home-banner-txt-color;
-            font-size: 2.4rem;
+            font-size: 1.5rem; 
             font-weight: 700;
+            text-align: left; 
+            white-space: pre-line; // Permet de contrôler les sauts de ligne
+            word-wrap: break-word; // Permet de casser les mots si nécessaire
+            width: 100%; 
+        }
+    }
 
-            @media screen and (min-width: $sm) {
-                width: 100%;
-                font-size: 3rem;
-                text-align: center;
+    // Media query pour les écrans plus larges
+    @media (min-width: $sm) {
+        background-image: url("../../assets/home-banner.png");
+
+        &--overlay {
+            align-items: center; 
+
+            .home__banner-txt {
+                font-size: 3rem; 
+                text-align: center; 
+                white-space: nowrap; 
                 animation: fade-in 600ms ease-in;
             }
         }
@@ -34,15 +41,16 @@
 .about__banner {
     @include banner-template("../../assets/about-banner-mobile.png");
 
-    @media (min-width: $sm) {
-        background-image: url("../../assets/about-banner.png");
-    }
-
     &--overlay {
         @include banner-opacity($about-banner-opacity);
         display: flex;
         align-items: center;
         padding: 0 1em;
         @include banner-dimensions;
+    }
+
+    // Media query pour les écrans plus larges
+    @media (min-width: $sm) {
+        background-image: url("../../assets/about-banner.png");
     }
 }

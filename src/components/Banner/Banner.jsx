@@ -7,7 +7,7 @@ function Banner ({page}) {
     <div className={`${page}__banner`}>
       <div className={`${page}__banner--overlay`}>
         {page === "home" ? (
-          <h1 className={`${page}__banner-txt`}>    {/* Ajout conditionnel du texte à la bannière */}
+          <h1 className={`${page}__banner-txt`}>
             Chez vous, partout et ailleurs
           </h1>
         ) : null}

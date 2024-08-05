@@ -1,78 +1,33 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @import './variables.scss';
 
+* {
+    
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    
+}
+
 html {
     font-family: Montserrat;
     font-size: 16px;
-}
-
-html,
-body {
     box-sizing: border-box;
-    width: 100%;
-    height: 100%;
 }
 
-*,
-*::before,
-*::after {
-    box-sizing: inherit;
-    margin: 0;
-    padding: 0;
-}
-
-button {
-    all: unset;
-}
 
 body {
-    .App {
-        min-height: 100vh;
-        width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .main__container {
+        width: 100vw;
+        max-width: $xl;
+        min-width: 320px;
         display: flex;
-        flex-flow: column;
-        justify-content: space-between;
-
-        .header,
-        .main {
-          
-            margin: 0 auto;
-            padding: 20px 20px 0 20px;
-        }
-
-        .main {
-            width: 100%;
-            height: 100%;
-            @include flex-center;
-            flex-direction: column;
-            justify-content: flex-start;
-            flex-grow: 1;
-        }
-
-        .viewport-warning {
-            width: 320px;
-            padding: 15px 35px;
-            display: flex;
-            flex-flow: column;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #fff;
-            background: $kasa-red;
-            border: 2px solid #e4ae26;
-
-            .viewport-warning__icon {
-                font-size: 3rem;
-            }
-
-            @media screen and (min-width: 320px) {
-                display: none; // Dissimulation  de la bannière d'avertissement
-            }
-        }
+        flex-direction: column;
     }
 }
-
 @keyframes fade-in {
     0% {
         opacity: 0;
