@@ -1,22 +1,44 @@
 @import '../../styles/variables.scss';
+
 .home {
-    padding: 2em 7em;
+    padding: 1em; 
 }
+
 .gallery {
-    
     display: flex;
-    gap: 2.5em;
+    gap: 1em; 
     max-width: 100%;
     flex-flow: row wrap;
     justify-content: center;
-    margin: 40px 0;   
+    margin: 1.25em 0; 
     border-radius: 25px;
-    background: $content-bg-color;
-    padding: 50px;
+    background: none; // Pas de background color pour mobile
+}
 
-    @media (max-width <=md) {
-            gap: 1em 0em;
-            background-color: none;
-        }
- 
+
+@media (min-width: $md) {
+
+    .home {
+        padding: 2em;
+    }
+
+    .gallery {
+        gap: 2.5em;
+        margin: 2.5em 0;
+        background: $content-bg-color;
+        padding: 3.12em;
+    }
+}
+
+@media (min-width: $lg) {
+
+    .home {
+        padding: clamp(1em, 2vw, 2em) clamp(3em, 5vw, 7em); // padding: haut/bas gauche/droite
+    }
+    .gallery {
+        gap: 2.5em;
+        margin: 2.5em 0;   
+        background: $content-bg-color;
+        padding: 3.12em;
+    }
 }

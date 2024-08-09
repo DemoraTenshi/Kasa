@@ -1,7 +1,7 @@
 @import '../../styles/variables.scss';
 
 .housing {
-    padding: 2em 7em;
+    padding: 1em; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -24,6 +24,7 @@
 
 .housing__header {
     display: flex;
+    flex-direction: column; 
     justify-content: space-between;
     width: 100%;
     padding-bottom: 1em;
@@ -36,28 +37,28 @@
 }
 
 .housing__tile {
-    font-size: 2.25em;
+    font-size: 1.5em; 
     font-weight: 500;
     color: $kasa-red;
     padding-bottom: 0.3em;
 }
 
 .housing__location {
-    font-size: 1.12em;
+    font-size: 1em; 
     font-weight: 500;
 }
 
 .housing__host {
-    display: flex;
+    display: none; 
     align-items: center;
 
     .housing__host-name {
         margin: 0;
-        font-size: 1.12em;
+        font-size: 1em; 
         color: $kasa-red;
         margin-right: 1em;
         display: inline-block;
-        width: 100px;
+        width: 6.25em;
         text-align: right;
 
         .housing__host-firstname,
@@ -69,43 +70,180 @@
 
     img {
         border-radius: 50%;
-        width: 50px;
-        height: 50px;
+        width: 1.88em; 
+        height: 1.88em; 
     }
 }
 
 .housing__tags-rating {
     display: flex;
+    flex-direction: column; 
     justify-content: space-between;
     width: 100%;
-    margin-bottom: 1em;
+    padding-bottom: 1em;
 }
 
 .housing__tags {
     display: flex;
     align-items: center;
+    padding-bottom: 1em;
+    order: 1; 
+}
+
+.housing__rating-host {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    order: 2; 
 }
 
 .housing__rating {
     display: flex;
     align-items: center;
+    margin-top: 1em; 
+}
+
+.housing__host-mobile {
+    display: flex;
+    align-items: center;
+
+    .housing__host-name {
+        margin: 0;
+        font-size: 1em; 
+        color: $kasa-red;
+        margin-right: 1em;
+        display: inline-block;
+        width: 6.25em;
+        text-align: right;
+
+        .housing__host-firstname,
+        .housing__host-lastname {
+            margin: 0;
+            white-space: nowrap;
+        }
+    }
+
+    img {
+        border-radius: 50%;
+        width: 1.88em; 
+        height: 1.88em; 
+    }
 }
 
 .star {
-    margin-right: 5px;
+    margin-right: 0.31em;
 }
 
 .star img {
-    width: 20px;
-    height: 20px;
+    width: 0.94em; 
+    height: 0.94em; 
 }
 
 .housing__collapse {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column; 
     width: 100%;
 }
 
-.housing__collapse>div {
-    width: 48%;
+
+// Media queries for larger screens
+@media screen and (min-width: $md) {
+    .housing {
+        padding: 2em; 
+    }
+
+    .housing__header {
+        flex-direction: row; 
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .housing__header-left {
+        flex-direction: column; 
+    }
+
+    .housing__tile {
+        font-size: 2em; 
+    }
+
+    .housing__location {
+        font-size: 1.2em; 
+    }
+
+    .housing__host {
+        display: flex; 
+        margin-top: 0; 
+    }
+
+    .housing__host .housing__host-name {
+        font-size: 1.2em; 
+    }
+
+    .housing__host img {
+        width: 2.5em; 
+        height: 2.5em; 
+    }
+
+    .housing__tags-rating {
+        flex-direction: row; 
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .housing__tags {
+        white-space: nowrap; 
+    }
+
+    .housing__rating {
+        margin-top: 0; 
+        margin-left: auto; 
+    }
+
+    .housing__host-mobile {
+        display: none; 
+    }
+
+    .housing__collapse {
+        flex-direction: row; 
+        justify-content: space-between;
+    }
+
+    .housing__collapse>div {
+        width: 48%;
+        margin-bottom: 0; 
+    }
+
+    .star img {
+        width: 1.25em; 
+        height: 1.25em; 
+    }
+}
+
+@media screen and (min-width: $lg) {
+    .housing {
+        padding: clamp(1em, 2vw, 2em) clamp(3em, 5vw, 7em); // padding: haut/bas gauche/droite
+    }
+
+    .housing__tile {
+        font-size: 2.25em; 
+    }
+
+    .housing__location {
+        font-size: 1.3em; 
+    }
+
+    .housing__host .housing__host-name {
+        font-size: 1.3em; 
+    }
+
+    .housing__host img {
+        width: 3.12em; 
+        height: 3.12em; 
+    }
+
+    .star img {
+        width: 1.56em; 
+        height: 1.56em; 
+    }
 }

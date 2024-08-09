@@ -6,26 +6,24 @@
     background-color: $main-bg-color;
     color: #fff;
     gap: 1em;
-    padding: 1em; 
-    font-size: 1rem; 
+    padding: 1em;
+    font-size: clamp(0.9rem, 2vw, 1.2rem); 
     width: 100%;
-    height: 209px;
+    height: 13.06em;
 
     &__p {
-            font-size: 0.8rem; 
-            white-space: pre-line;  
-            word-wrap: break-word; // Permet de casser les mots si nécessaire
-            text-align: center;
-        }
+        font-size: clamp(0.7rem, 1.5vw, 1rem); 
+        word-wrap: break-word; // Permet de casser les mots si nécessaire
+        text-align: center;
+    }
 
     // Media query pour les écrans plus larges
     @media (min-width: $lg) {
-        gap: 2em; 
-
+        gap: 2em;
 
         &__p {
-                font-size: 1.5rem;
-                white-space: normal; // Réinitialise le comportement du texte pour les écrans plus larges
-            }
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            white-space: normal; // Réinitialise le comportement du texte pour les écrans plus larges
+        }
     }
 }

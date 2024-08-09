@@ -1,7 +1,7 @@
-import Banner from '../../components/Banner/Banner';
-import Collapse from '../../components/Collapse/Collapse';
-import about from '../../data/about.json';
-import './About.scss';
+import Banner from '../../components/Banner/Banner'
+import Collapse from '../../components/Collapse/Collapse'
+import about from '../../data/about.json'
+import './About.scss'
 
 
 function About() {
@@ -14,7 +14,7 @@ function About() {
         ))}
       </section>
     </main>
-  );
+  )
 }
 
-export default About;
+export default About

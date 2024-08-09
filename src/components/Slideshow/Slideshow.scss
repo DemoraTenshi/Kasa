@@ -8,7 +8,7 @@
     &__container {
         position: relative;
         width: 100%;
-        height: 415px; 
+        height: 12.5em; 
         overflow: hidden;
         border-radius: 25px;
     }
@@ -32,15 +32,15 @@
             object-fit: cover;
         }
 
-        .slideshow__caption {
-            position: absolute;
-            bottom: 1em;
-            left: 50%;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 1.2em;
-        }
+          .slideshow__caption {
+              position: absolute;
+              bottom: 1em;
+              left: 50%;
+              color: white;
+              padding: 0.31em 0.62em;
+              border-radius: 5px;
+              font-size: 1.2rem;
+          }
     }
 
     &__button {
@@ -49,23 +49,43 @@
         transform: translateY(-50%);
         background: rgba(0, 0, 0, 0);
         border: none;
-        padding: 10px;
+        padding: 0.62em;
         cursor: pointer;
 
         &.prev {
-            left: 10px;
+            left: 0.62em;
         }
 
         &.next {
-            right: 10px;
+            right: 0.62em;
         }
 
         img {
-            width: 47px;
-            height: 79px;
+            width: 1.5em; 
+            height: 2.5em; 
         }
     }
 
+    // Media queries for larger screens
+    @media screen and (min-width: $sm) {
+        &__container {
+            height: 18.75em;
+        }
 
-    
+        &__button img {
+            width: 2.25em;
+            height: 3.75em;
+        }
+    }
+
+    @media screen and (min-width: $lg) {
+        &__container {
+            height: 25.94em;
+        }
+
+        &__button img {
+            width: 2.94em;
+            height: 4.94em;
+        }
+    }
 }

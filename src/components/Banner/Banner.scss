@@ -1,38 +1,67 @@
 @import '../../styles/variables.scss';
 
+// Styles globaux pour la bannière
 .home__banner {
     @include banner-template("../../assets/home-banner-mobile.png");
 
     &--overlay {
         @include banner-opacity($home-banner-opacity);
         display: flex;
-        align-items: flex-start; 
+        align-items: center; 
         padding: 0 1em;
-        @include banner-dimensions;
+        height: 100%; 
+        border-radius: inherit; // Utilise le border-radius défini dans le mixin
 
         .home__banner-txt {
             color: $home-banner-txt-color;
-            font-size: 1.5rem; 
+            font-size: clamp(1.5rem, 4vw, 2rem); 
             font-weight: 700;
             text-align: left; 
-            white-space: pre-line; // Permet de contrôler les sauts de ligne
-            word-wrap: break-word; // Permet de casser les mots si nécessaire
-            width: 100%; 
+            padding: 1em 0;
+            width: 100%;
+
+            .home__banner-txt--mobile {
+                display: block;
+            }
+
+            .home__banner-txt--desktop {
+                display: none;
+            }
         }
     }
 
-    // Media query pour les écrans plus larges
-    @media (min-width: $sm) {
+    // Media query pour les écrans entre 576px et 768px
+    @media (min-width: $sm) and (max-width: 767px) {
+        background-image: url("../../assets/home-banner-mobile.png");
+
+        .home__banner-txt {
+            font-size: clamp(2rem, 4vw, 2.5rem);  
+            text-align: center; 
+
+            .home__banner-txt--mobile {
+                display: none;
+            }
+
+            .home__banner-txt--desktop {
+                display: block;
+            }
+        }
+    }
+
+    // Media query pour les grands écrans (à partir de 768px)
+    @media (min-width: $md) {
         background-image: url("../../assets/home-banner.png");
 
-        &--overlay {
-            align-items: center; 
+        .home__banner-txt {
+            font-size: clamp(2.5rem, 5vw, 3rem); 
+            text-align: center; 
 
-            .home__banner-txt {
-                font-size: 3rem; 
-                text-align: center; 
-                white-space: nowrap; 
-                animation: fade-in 600ms ease-in;
+            .home__banner-txt--mobile {
+                display: none;
+            }
+
+            .home__banner-txt--desktop {
+                display: block;
             }
         }
     }
@@ -46,11 +75,12 @@
         display: flex;
         align-items: center;
         padding: 0 1em;
-        @include banner-dimensions;
+        height: 100%; 
+        border-radius: inherit; 
     }
 
     // Media query pour les écrans plus larges
-    @media (min-width: $sm) {
+    @media (min-width: $lg) {
         background-image: url("../../assets/about-banner.png");
     }
 }

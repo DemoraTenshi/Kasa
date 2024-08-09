@@ -1,32 +1,32 @@
-import React from 'react';
-import { useParams, Navigate } from 'react-router-dom';
-import Slideshow from '../../components/Slideshow/Slideshow';
-import Tags from '../../components/Tags/Tags';
-import Collapse from '../../components/Collapse/Collapse';
-import housingData from '../../data/housing.json';
-import neutralStar from '../../assets/star-shadow-modif.png';
-import redStar from '../../assets/star-color.png';
-import './Housing.scss';
+import React from 'react'
+import { useParams, Navigate } from 'react-router-dom'
+import Slideshow from '../../components/Slideshow/Slideshow'
+import Tags from '../../components/Tags/Tags'
+import Collapse from '../../components/Collapse/Collapse'
+import housingData from '../../data/housing.json'
+import neutralStar from '../../assets/star-shadow-modif.png'
+import redStar from '../../assets/star-color.png'
+import './Housing.scss'
 
 function Housing() {
-    const { id } = useParams();
-    const housing = housingData.find(h => h.id === id);
+    const { id } = useParams()
+    const housing = housingData.find(h => h.id === id)
 
     if (!housing) {
-        return <Navigate to="/Error404" />;
+        return <Navigate to="/Error404" />
     }
 
     const renderStars = (rating) => {
-        const stars = [];
+        const stars = []
         for (let i = 0; i < 5; i++) {
             stars.push(
                 <span key={i} className='star'>
-                    <img src={i < rating ? redStar : neutralStar} alt="star" />
+                    <img src={i < rating ? redStar : neutralStar} alt='star' />
                 </span>
-            );
+            )
         }
-        return stars;
-    };
+        return stars
+    }
 
     return (
         <main className='housing'>
@@ -51,8 +51,17 @@ function Housing() {
                         <div className='housing__tags'>
                             <Tags tags={housing.tags} />
                         </div>
-                        <div className='housing__rating'>
-                            {renderStars(parseInt(housing.rating))}
+                        <div className='housing__rating-host'>
+                            <div className='housing__rating'>
+                                {renderStars(parseInt(housing.rating))}
+                            </div>
+                            <div className='housing__host-mobile'>
+                                <div className='housing__host-name'>
+                                    <p className='housing__host-firstname'>{housing.host.name.split(' ')[0]}</p>
+                                    <p className='housing__host-lastname'>{housing.host.name.split(' ')[1]}</p>
+                                </div>
+                                <img src={housing.host.picture} alt={housing.host.name} />
+                            </div>
                         </div>
                     </div>
                     <div className='housing__collapse'>
@@ -62,7 +71,7 @@ function Housing() {
                 </div>
             </section>
         </main>
-    );
+    )
 }
 
-export default Housing;
+export default Housing

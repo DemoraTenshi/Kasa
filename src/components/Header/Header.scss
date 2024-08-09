@@ -1,25 +1,25 @@
 @import '../../styles/variables.scss';
 
 .header {
-    padding: 1em; // Padding par défaut pour les petits écrans
+    padding: clamp(1em, 2vw, 2em); 
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
 
     &__logo {
-        width: 145px; // Taille par défaut du logo pour les petits écrans
+        width: clamp(9.06em, 15vw, 1313.12em); 
         height: auto;
     }
 
     &__nav {
         display: flex;
-        gap: 2em; // Gap par défaut pour les petits écrans
+        gap: clamp(1.5em, 4vw, 6em); 
         align-items: center;
 
         .nav__link-home,
         .nav__link-about {
-            font-size: 1rem; // Taille de police par défaut pour les petits écrans
+            font-size: clamp(1rem, 2.5vw, 1.12rem); 
             font-weight: 500;
             text-decoration: none;
             color: #000;
@@ -31,25 +31,41 @@
     }
 
     // Media query pour les écrans plus larges
-
-
-    
-    @media (min-width: $lg) {
-        padding: 2em 7em;
+    @media (min-width: $md) {
+        padding: clamp(2em, 3vw, 4em); 
         justify-content: space-between;
         width: auto;
 
         &__logo {
-            width: 210; // Taille du logo pour les écrans plus larges
+            width: clamp(11.25em, 12vw, 13.12em); 
         }
 
         &__nav {
-            gap: 6em; // Gap pour les écrans plus larges
+            gap: clamp(4em, 5vw, 6em); 
 
             .nav__link-home,
             .nav__link-about {
-                font-size: 1.5rem; // Taille de police pour les écrans plus larges
+                font-size: clamp(1.3rem, 2.5vw, 1.5rem); 
             }
         }
     }
+
+        @media (min-width: $lg) {
+            padding: clamp(1em, 2vw, 2em) clamp(3em, 5vw, 7em);
+            justify-content: space-between;
+            width: auto;
+    
+            &__logo {
+                width: 13.12em; 
+            }
+    
+            &__nav {
+                gap: 6em; 
+    
+                .nav__link-home,
+                .nav__link-about {
+                    font-size: 1.5rem; 
+                }
+            }
+        }
 }

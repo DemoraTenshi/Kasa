@@ -9,44 +9,22 @@
         align-items: center;
         background: $kasa-red;
         border-radius: 5px;
-        height: 30px;
-        padding: 0 10px;
+        height: 1.88em;
+        padding: 0 0.62em;
         flex-grow: 1;
         cursor: pointer;
 
-        @media screen and (min-width: $sm) {
-            height: 35px;
-            font-size: 1.5rem;
-        }
-
-        @media screen and (min-width: $md) {
-            height: 45px;
-        }
-
-        @media screen and (min-width: $lg) {
-            height: 52px;
-        }
-
         .collapse__heading {
-            font-size: 1.3rem;
+            font-size: clamp(1.2rem, 2vw, 1.6rem); 
             color: $collapsible-text-color;
-
-            @media screen and (min-width: $sm) {
-                font-size: 1.5rem;
-            }
         }
 
         .arrow {
-            width: 16px;
-            height: 9px;
+            width: 1em;
+            height: 0.56em;
 
             &:hover {
                 cursor: pointer;
-            }
-
-            @media screen and (min-width: $sm) {
-                width: 24px;
-                height: 13px;
             }
         }
     }
@@ -78,10 +56,33 @@
             border-radius: 5px;
 
             ul {
-                    list-style-type: none;
-                }
+                list-style-type: none;
+            }
+        }
+    }
 
-            @media screen and (min-width: $sm) {}
+    // Media queries pour les écrans plus larges
+    @media screen and (min-width: $sm) {
+        .collapse__header {
+            height: 2.19em;
+            font-size: clamp(1.3rem, 2.5vw, 1.7rem); 
+
+            .collapse__heading {
+                font-size: clamp(1.3rem, 2.5vw, 1.7rem); 
+            }
+
+        }
+    }
+
+    @media screen and (min-width: $md) {
+        .collapse__header {
+            height: 2.81em;
+        }
+    }
+
+    @media screen and (min-width: $lg) {
+        .collapse__header {
+            height: 3.25em;
         }
     }
 }
