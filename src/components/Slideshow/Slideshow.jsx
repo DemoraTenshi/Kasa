@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import PropTypes from 'prop-types'
 import leftArrow from '../../assets/arrow-prev.png'
 import rightArrow from '../../assets/arrow-next.png'
 import Modal from '../Modal/Modal'
@@ -74,8 +73,5 @@ function Slideshow({ slides }) {
     )
 }
 
-Slideshow.propTypes = {
-    slides: PropTypes.arrayOf(PropTypes.string).isRequired,
-}
 
 export default Slideshow;

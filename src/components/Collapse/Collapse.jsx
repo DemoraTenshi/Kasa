@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from 'react'
-import PropTypes from 'prop-types'
 import Arrow from '../../assets/arrow-up.png'
 import './Collapse.scss'
 
@@ -58,17 +57,5 @@ function Collapse({ data, className, titleFontSize, contentFontSize }) {
     );
 }
 
-Collapse.propTypes = {
-    data: PropTypes.shape({
-        id: PropTypes.string.isRequired,
-        title: PropTypes.string.isRequired,
-        description: PropTypes.string,
-        equipments: PropTypes.arrayOf(PropTypes.string),
-        tags: PropTypes.arrayOf(PropTypes.string),
-    }).isRequired,
-    className: PropTypes.string,
-    titleFontSize: PropTypes.string,
-    contentFontSize: PropTypes.string,
-}
 
 export default Collapse

@@ -74,15 +74,5 @@
         }
     }
 
-    @media screen and (min-width: $md) {
-        .collapse__header {
-            height: 2.81em;
-        }
-    }
 
-    @media screen and (min-width: $lg) {
-        .collapse__header {
-            height: 3.25em;
-        }
-    }
 }

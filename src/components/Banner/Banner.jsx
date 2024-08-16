@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+
 import './Banner.scss'
 
 function Banner ({page}) {
@@ -17,8 +17,5 @@ function Banner ({page}) {
   )
 }
 
-Banner.propTypes = {
-  page: PropTypes.string.isRequired,
-}
 
 export default Banner

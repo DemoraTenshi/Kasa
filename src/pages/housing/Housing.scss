@@ -144,7 +144,13 @@
     display: flex;
     flex-direction: column; 
     width: 100%;
+
+    .collapse__header{
+        border-radius: 10px;
+    }
+
 }
+
 
 
 // Media queries for larger screens
