@@ -39,5 +39,10 @@
   },
   "devDependencies": {
     "prettier": "^3.3.3"
-  }
+  },
+  "engines": {
+  "node": ">=14.0.0",
+  "yarn": ">=1.22.0"
+}
+
 }
