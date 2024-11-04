@@ -1,20 +1,21 @@
 import React from 'react'
-import { useParams, Navigate } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import Slideshow from '../../components/Slideshow/Slideshow'
 import Tags from '../../components/Tags/Tags'
 import Collapse from '../../components/Collapse/Collapse'
 import housingData from '../../data/housing.json'
 import neutralStar from '../../assets/star-shadow-modif.png'
 import redStar from '../../assets/star-color.png'
+import Error404 from '../error404/Error404'
 import './Housing.scss'
 
 function Housing() {
     const { id } = useParams()
     const housing = housingData.find(h => h.id === id)
 
-    if (!housing) {
-        return <Navigate to="/Error404" />
-    }
+     if (!housing) {
+    return <Error404 />
+  }
 
     const renderStars = (rating) => {
         const stars = []
