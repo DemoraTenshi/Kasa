@@ -4,6 +4,14 @@
 
 Bienvenue dans le dépôt GitHub du projet Openclasstooms 5 Kasa. Le site Kasa est une plateforme de location d'appartements entre particuliers. Il a été codé il y a 10 ans en ASP.net et le but de ce projet est la refonte complète du site pour le moderniser.
 
+## Badges
+
+![image](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![image](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![image](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+![image](https://img.shields.io/badge/Node%20js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![image](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+
 ## Table des Matières
 
 - [Description](#-Description)
